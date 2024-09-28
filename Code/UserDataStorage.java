@@ -20,7 +20,7 @@ public class UserDataStorage {
 
         // Verificar se o nome ou email já existe
         if (isNameOrEmailTaken(nome, email)) {
-            System.out.println("O nome ou email já está em uso. Por favor, escolha outro.");
+            System.out.println("Este nome ou email já está em uso. Por favor, escolha outro.");
         } else {
             // Salvar os dados em um arquivo
             try (FileWriter writer = new FileWriter("user_data.txt", true)) {
@@ -28,16 +28,16 @@ public class UserDataStorage {
                 writer.write("Email: " + email + "\n");
                 writer.write("Senha: " + senha + "\n");
                 writer.write("-------------------------\n");
-                System.out.println("Dados armazenados com sucesso!");
+                System.out.println("Cadastro feito com sucesso!");
             } catch (IOException e) {
-                System.out.println("Ocorreu um erro ao salvar os dados: " + e.getMessage());
+                System.out.println("Ocorreu um erro ao fazer o cadastro: " + e.getMessage());
             }
         }
 
         scanner.close();
     }
 
-    // Função para verificar se o nome ou email já existe no arquivo
+    // Verificar se o nome ou email já existe no arquivo
     private static boolean isNameOrEmailTaken(String nome, String email) {
         try (BufferedReader reader = new BufferedReader(new FileReader("user_data.txt"))) {
             String line;
