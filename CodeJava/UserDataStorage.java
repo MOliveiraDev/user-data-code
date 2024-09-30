@@ -37,7 +37,7 @@ public class UserDataStorage {
         scanner.close();
     }
 
-    // Verificar se o nome ou email já existe no arquivo
+    // Este código faz com que ao verificar se o nome ou email já existe no arquivo, não será feito o cadastro
     private static boolean isNameOrEmailTaken(String nome, String email) {
         try (BufferedReader reader = new BufferedReader(new FileReader("user_data.txt"))) {
             String line;
