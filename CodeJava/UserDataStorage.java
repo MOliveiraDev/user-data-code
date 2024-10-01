@@ -22,7 +22,7 @@ public class UserDataStorage {
         if (isNameOrEmailTaken(nome, email)) {
             System.out.println("Este nome ou email já está em uso. Por favor, escolha outro.");
         } else {
-            // Salvar os dados em um arquivo
+            // Ao executar, irá criar um arquivo em user_data.txt para armazenar os dados, conforme o código pedir as instruções nescessárias 
             try (FileWriter writer = new FileWriter("user_data.txt", true)) {
                 writer.write("Nome: " + nome + "\n");
                 writer.write("Email: " + email + "\n");
