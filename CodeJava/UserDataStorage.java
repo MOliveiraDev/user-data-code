@@ -3,6 +3,7 @@ import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.util.Scanner;
+import java.util.Date;
 
 public class UserDataStorage {
     public static void main(String[] args) {
@@ -24,6 +25,9 @@ public class UserDataStorage {
         } else {
             // Ao executar, irá criar um arquivo em user_data.txt para armazenar os dados, conforme o código pedir as instruções nescessárias 
             try (FileWriter writer = new FileWriter("user_data.txt", true)) {
+                Date timer = new Date();
+                writer.write("-------------------------\n");
+                writer.write("Data de cadastro: " + timer.toString() + "\n");
                 writer.write("Nome: " + nome + "\n");
                 writer.write("Email: " + email + "\n");
                 writer.write("Senha: " + senha + "\n");
