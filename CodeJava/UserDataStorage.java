@@ -46,9 +46,9 @@ public class UserDataStorage {
         try (BufferedReader reader = new BufferedReader(new FileReader("user_data.txt"))) {
             String line;
             while ((line = reader.readLine()) != null) {
-                // Verificar se a linha contém o nome ou email
+            
                 if (line.contains("Nome: " + nome) || line.contains("Email: " + email)) {
-                    return true;  // Nome ou email já está em uso
+                    return true;  
                 }
             }
         } catch (IOException e) {
